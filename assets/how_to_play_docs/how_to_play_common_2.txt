@@ -1,0 +1,22 @@
+
+To figure out where to place the squares, use the numbers on top
+and on the left of the board.
+
+The numbers illustrate the filled squares by stating how many squares
+there are in sequence on that particular row or column.
+A "1" means a single filled square without any adjacent ones.
+A "3" followed by a "1" means 3 filled squares in a row, at least one
+blank space, and a single filled square.
+
+When the example puzzle is solved, it would look like this:
+
+       1         3 
+       2 1 1 2   1
+   1 1 ■ · ■ · · · A
+   1 1 · ■ · · · ■ B
+ 1 1 1 ■ · · ■ · ■ C
+ 1 1 1 ■ · · ■ · ■ D
+       · · · · · · E
+     1 · · · · · ■ F
+       1 2 3 4 5 6
+_____________________________________________  

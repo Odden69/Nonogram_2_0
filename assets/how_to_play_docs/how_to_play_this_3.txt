@@ -1,0 +1,17 @@
+
+If you choose to mark the squares which you know can't be filled,
+the game will be easier to solve.
+
+If you change your mind, you can choose the same coordinate again to 
+change from filled square to empty or vice versa.
+
+When you think you are done placing the squares. Type an "X" and
+you will get the result of your game.
+
+When all the dots on the board has been replaced by either a filled
+or an empty square, the game will automatically finish.
+
+You can always type "Q" to quit or "R" to restart the game.
+
+Good Luck!
+_____________________________________________

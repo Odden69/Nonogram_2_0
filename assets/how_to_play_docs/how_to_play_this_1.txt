@@ -1,0 +1,17 @@
+
+How to play this Nonogram Game
+_____________________________________________
+
+       1         3 
+       2 1 1 2   1
+   1 1 ■ □ ■ · □ · A
+   1 1 □ ■ · · □ ■ B
+ 1 1 1 ■ · · ■ □ ■ C
+ 1 1 1 ■ · · ■ □ ■ D
+       □ □ □ □ □ □ E
+     1 · · · · □ ■ F
+       1 2 3 4 5 6
+
+If you don't know how a Nonogram works, please read the common
+rules first.
+_____________________________________________

@@ -1,3 +1,6 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+"""
+Calls the starting function of the Nonogram Game
+"""
+from library.run_game import run_game
+
+run_game()
