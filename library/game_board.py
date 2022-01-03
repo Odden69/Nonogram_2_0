@@ -2,6 +2,7 @@ import random
 from math import ceil
 from library.clear_screen import clear_screen
 from library.compare import compare_patterns
+from run import SHEET
 
 
 class GameBoard:
@@ -22,7 +23,9 @@ class GameBoard:
         self.game_pattern = [[str(random.randint(0, 1)) for i in
                              range(self.size)] for j in range(self.size)]
         return self.game_pattern
-
+    
+    # def populate_game_pattern_from_file(self):
+        
     def populate_player_pattern(self):
         """
         populates the players board matrix with a single dot for each index.
