@@ -2,7 +2,19 @@ import random
 from math import ceil
 from library.clear_screen import clear_screen
 from library.compare import compare_patterns
-from run import SHEET
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('Nonogram_game')
 
 
 class GameBoard:
@@ -20,12 +32,27 @@ class GameBoard:
         populates the game board matrix with random 0s and 1s.
         0 for empty and 1 for a filled index.
         """
-        self.game_pattern = [[str(random.randint(0, 1)) for i in
-                             range(self.size)] for j in range(self.size)]
+        if self.size == 10:
+            self.game_pattern = self.populate_game_pattern_from_file()
+        else:
+            self.game_pattern = [[str(random.randint(0, 1)) for i in
+                                 range(self.size)] for j in range(self.size)]
         return self.game_pattern
-    
-    # def populate_game_pattern_from_file(self):
-        
+
+    def populate_game_pattern_from_file(self):
+        """
+        Populates the game board matrix with a randomly selected predefined
+        pattern imported from spreadsheet.
+        Only valid for a game board of size 10x10.
+        """
+        patterns = SHEET.worksheet("Pattern")
+        row = random.randint(1, 15)
+        for column in range(1, 11):
+            cell = patterns.cell(row, column).value
+            cell = list(cell.split(', '))
+            self.game_pattern.append(cell)
+        return self.game_pattern
+
     def populate_player_pattern(self):
         """
         populates the players board matrix with a single dot for each index.
