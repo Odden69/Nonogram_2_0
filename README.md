@@ -1,1 +1,1 @@
-This repo is a copy of https://github.com/Odden69/nonogram_game, with the difference that this project was refactored using classes instead of just functions.
+This repo is a copy of https://github.com/Odden69/nonogram_game, with the difference that this project was refactored using classes instead of just functions and also collects the game pattern for the largest game board from an external google document spreadsheet.
